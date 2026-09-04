@@ -1,23 +1,15 @@
 {
   "$schema": "./schemas/performance-target.schema.json",
   "target": {
-    "repository": "owner/repository",
+    "repository": "arcaderenegade/sidebardiagnostics",
     "ref": "main",
-    "projectPath": "src/Application.csproj",
+    "projectPath": "SidebarDiagnostics.sln",
     "reportLabel": ".NET Application"
   },
   "platforms": {
     "Windows": {
       "runtimeIdentifier": "win-x64",
-      "executablePath": "Application.exe"
-    },
-    "Linux": {
-      "runtimeIdentifier": "linux-x64",
-      "executablePath": "Application"
-    },
-    "macOS": {
-      "runtimeIdentifier": "osx-x64",
-      "executablePath": "Application"
+      "executablePath": "SidebarDiagnostics.exe"
     }
   },
   "publish": {

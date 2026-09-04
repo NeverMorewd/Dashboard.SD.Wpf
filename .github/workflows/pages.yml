@@ -1,0 +1,24 @@
+name: Refresh performance report history
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 3 * * *'
+
+permissions:
+  contents: read
+  actions: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: performance-pages
+  cancel-in-progress: false
+
+jobs:
+  pages:
+    uses: NeverMorewd/DotNetPerformanceLab/.github/workflows/deploy-pages.yml@561ba257288e950118be2bee5840e4e490b48fb1
+    with:
+      history-days: 30
+      maximum-runs: 50
+      toolkit-ref: 561ba257288e950118be2bee5840e4e490b48fb1

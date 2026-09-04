@@ -1,0 +1,53 @@
+{
+  "$schema": "./schemas/performance-target.schema.json",
+  "target": {
+    "repository": "owner/repository",
+    "ref": "main",
+    "projectPath": "src/Application.csproj",
+    "reportLabel": ".NET Application"
+  },
+  "platforms": {
+    "Windows": {
+      "runtimeIdentifier": "win-x64",
+      "executablePath": "Application.exe"
+    },
+    "Linux": {
+      "runtimeIdentifier": "linux-x64",
+      "executablePath": "Application"
+    },
+    "macOS": {
+      "runtimeIdentifier": "osx-x64",
+      "executablePath": "Application"
+    }
+  },
+  "publish": {
+    "configuration": "Release",
+    "selfContained": true,
+    "nativeAot": true,
+    "trimmed": true,
+    "lockedRestore": true
+  },
+  "measurement": {
+    "warmupSeconds": 60,
+    "measurementSeconds": 300,
+    "sampleIntervalMilliseconds": 1000,
+    "cooldownSeconds": 10,
+    "iterations": 3,
+    "collectCounters": true,
+    "counterDurationSeconds": 30,
+    "collectTrace": false,
+    "traceDurationSeconds": 30,
+    "artifactRetentionDays": 30,
+    "meters": [
+      "System.Net.Http",
+      "System.Net.NameResolution",
+      "System.Net.Sockets"
+    ]
+  },
+  "schedule": {
+    "enabled": false,
+    "platforms": [
+      "Windows"
+    ]
+  }
+}
